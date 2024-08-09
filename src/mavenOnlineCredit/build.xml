@@ -1,0 +1,22 @@
+<project name="maven-ear-CreditScore" default="execute-build" basedir=".">
+	
+	<!-- ........................................................ -->
+	<target name="execute-build">
+		<antcall target="build">
+			<param name="project" value="mavenOnlineCredit" />
+		</antcall>
+	</target>
+
+	<target name="build">
+		<exec dir="../${project}" executable="cmd">
+			<arg value="/c" />
+			<arg value="mvn" />
+			<arg value="eclipse:clean" />
+			<arg value="clean" />
+			<arg value="eclipse:eclipse" />			
+			<arg value="install" />
+			<arg value="-Dmaven.test.skip=true" />
+			<arg value="-e" />
+		</exec>
+	</target>	
+</project>

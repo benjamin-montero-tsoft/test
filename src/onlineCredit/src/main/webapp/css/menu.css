@@ -1,0 +1,62 @@
+.menu{
+	font-family: verdana;
+	font-size: 14px;
+	font-weight: bold;
+}
+.menu ul{
+	float: left;
+	margin: 1px 0px;
+	padding: 0px;
+	display: block;
+	outline: 0 none;
+	border-radius: 6px;
+	position: relative;
+    z-index: 2;
+}
+.menu ul li{
+	list-style: none;
+	position: relative;
+	top: 1px;
+	margin-bottom: 1px;
+	display: block;
+}
+.menu ul li a{
+    background-color: #D2F400;
+	border-radius: 5px 5px 5px 5px;
+	float: left;
+	text-decoration: none;
+	display: block;
+	border: 1px solid #000000;
+	margin: 1px 0px;
+	width: 187px;
+	font-weight: bold;
+	font-size: 14px;
+	color: #000000;
+	border: 1px solid #aaaaaa; 
+	background: #d2f400 url(../images/jquery/ui-bg_glass_75_d2f400_1x400.png) 50% 50% repeat-x;
+}
+.menu ul li ul a{
+    width:187px;
+	border-radius: 5px;
+	background-color: #D2F400;
+	display: block;
+	font-weight: normal;
+	font-size: 12px;
+	text-decoration: none;
+	color: #000000;
+	border: 1px dotted #aaaaaa; 
+	background: #d2f400 url(../images/jquery/ui-bg_glass_75_d2f400_1x400.png) 90% 90% repeat-x;
+}
+.menu ul li a:hover{
+    background: #cccccc url(../images/jquery/ui-bg_glass_40_cccccc_1x400.png) 50% 50% repeat-x; 
+	border: 1px solid #999999; 
+	color: #212121;
+}
+.menu ul li ul a:hover{
+    background: #cccccc url(../images/jquery/ui-bg_glass_40_cccccc_1x400.png) 50% 50% repeat-x; 
+	border: 1px dotted #999999; 
+	color: #212121;
+}
+.menu ul li ul{
+    display:none;
+}

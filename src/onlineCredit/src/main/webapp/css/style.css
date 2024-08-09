@@ -1,0 +1,257 @@
+html{
+	font-family: verdana;
+}
+table{
+	display:block;
+}
+td{
+	font-size: 12px;
+}
+/* TEMPLATE */
+#container{
+	float: left;
+	background-color: #FFFFFF;
+	background-image: url("../images/template/background.jpg");
+	background-position: left top;
+	background-repeat: no-repeat;
+	left: 0;
+	right: 0;
+	width: 100%;
+}
+
+#header{
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 110px;
+}
+
+#menu{
+	float: left;
+	width: 200px;
+	min-height: 450px;
+}
+
+#bodyFragment{
+	min-width: 600px;
+	min-height: 450px;
+	padding-left: 200px;
+}
+/* Define estilos para el bodyFragment en IE7*/
+*:first-child+html #bodyFragment{
+	padding-left: 0px;
+	min-width: 0px;
+}
+
+#filtros{
+	width: 80%;
+	position: absolute;
+}
+
+#realizarConsulta{
+	width: 35%;
+	position: relative;
+	float: left;
+}
+
+#limpiarFormularios{
+	width: 20%;
+	position: absolute;
+	top: 100px;
+	left: 300px;
+}
+
+#realizarBajada{
+	width: 35%;
+	position: relative;
+	float: left;
+	
+}
+
+#table{
+	width: 100%;
+	position: relative;
+	top: 130px;
+}
+
+table.title{
+	background-color: #D2F400;
+	border-radius: 4px;
+}
+
+td.title{
+	font-family: verdana;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+td.subtitleBoldBackGround{
+	background-color: #ebfb99;
+	font-family: verdana;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+td.subtitleBoldUnderlined{
+	text-align: center;
+	border-bottom: solid;
+	border-bottom-color: #D2F400;
+	font-family: verdana;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.error{
+	color: red;
+	font-weight: bold;
+}
+/* MENU */
+ul.dropmenu {
+	float: left;
+	margin: 1px 0px;
+	padding: 0px;
+	display: block;
+	border-radius: 6px;
+	outline: 0 none;
+}
+
+.dropmenu li {
+	list-style: none;
+	position: relative;
+	top: 1px;
+	margin-bottom: 1px;
+	display: block;
+}
+
+.dropmenu li a {
+	background-color: #D2F400;
+	border-radius: 5px 5px 5px 5px;
+	float: left;
+	text-decoration: none;
+	display: block;
+	border: 1px solid #000000;
+	margin: 1px 0;
+	width: 187px;
+	font-weight: bold;
+	font-size: 14px;
+	color: #000000;
+	border: 1px solid #aaaaaa; 
+	background: #d2f400 url(../images/jquery/ui-bg_glass_75_d2f400_1x400.png) 50% 50% repeat-x;
+}
+
+.dropmenu li li a {
+	width: 250px;
+}
+
+.dropmenu li a:hover,.dropmenu li.open>a {
+	background: #cccccc url(../images/jquery/ui-bg_glass_40_cccccc_1x400.png) 50% 50% repeat-x; 
+	border: 1px solid #999999; 
+	color: #212121;
+}
+/* Submenu */
+.dropmenu li ul {
+	display: none;
+	position: absolute;
+	left: 101% !important;
+	top: 0% !important;
+	padding: 0px;
+	margin: 0px;
+}
+
+.dropmenu li:hover>ul,.dropmenu li:hover>div {
+	display: block;
+}
+
+.dropmenu li ul li,.dropmenu li ul li a {
+	color: #0657AD;
+	text-transform: none;
+	line-height: normal;
+}
+* html .dropmenu li ul li {
+	line-height: 0;
+}
+.dropmenu li ul li {
+	_display: inline;
+}
+
+.dropmenu li ul li a {
+	border-radius: 5px;
+	background-color: #D2F400;
+	display: block;
+	font-weight: bold;
+	text-decoration: none;
+	color: #000000;
+	border: 1px solid #aaaaaa; 
+	background: #d2f400 url(../images/jquery/ui-bg_glass_75_d2f400_1x400.png) 50% 50% repeat-x;
+}
+
+.dropmenu li ul li a:hover {
+	background: #cccccc url(../images/jquery/ui-bg_glass_40_cccccc_1x400.png) 50% 50% repeat-x; 
+	border: 1px solid #999999; 
+	color: #212121;
+}
+
+.scroll {
+	height: auto;
+	overflow: auto;
+	margin: 0;
+	padding: 5px;
+	border: 0;
+	width: 780px;
+}
+
+/* Define estilos para las barras de las grillas en IE */
+* html .scroll {
+	overflow-x: scroll;
+}
+/* Define estilos para las barras de las grillas en IE7 */
+*:first-child+html .scroll {
+	overflow-x: scroll;
+	overflow-y: hidden;
+}
+
+.scrollMatrix {
+	height: auto;
+	overflow: auto;
+	margin: 0;
+	padding: 5px;
+	border: 0;
+	width: 820px;
+}
+
+/* Define estilos para las barras de las grillas en IE */
+* html .scrollMatrix {
+	overflow-x: scroll;
+}
+/* Define estilos para las barras de las grillas en IE7 */
+*:first-child+html .scrollMatrix {
+	overflow-x: scroll;
+	overflow-y: hidden;
+}
+
+/* Table */
+.double {
+	border-left: double;
+	border-left-color: yellow;
+	padding-left: 10px;
+}
+.dotLine{
+	border-top: dotted;
+	border-top-color: yellow;
+}
+.titleDot{
+	border-bottom: solid;
+	border-bottom-color: #D2F400;
+	font-family: verdana;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.searchHeader
+{
+	background-color: #D2F440;
+    width: 430px;
+}
+.upperCase{
+	text-transform:uppercase;	
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM  "log4j.dtd" >
+<log4j:configuration>
+	<appender name="rolling-file" class="org.apache.log4j.RollingFileAppender">
+				<!-- produccion -->
+             	 <param name="file" value="/filerecept/RCFiles/logs/bajadaMensual.log"/> 
+             	<!-- LOCAL -->
+             	<!-- param name="file" value="C:/bajadaAMDOCSMensual/log/ReporteCrediticio.log"/> -->
+             	<!-- DESARROLLO - serve212 -->
+             	<!--  <param name="file" value="/home/usuarios/sfg/sfg126/home/ctmprod/scp/applcred/bajadaAmdocsMensual/logs/bajadaMensual.log"/>-->
+             	<!-- TEST - serve212 -->
+             	<!--<param name="file" value="/home/usuarios/sfi/sfi525/Test/crediticioBatch/bajadaAMDOCSMensual/log/ReporteCrediticio.log"/>-->
+	        	<param name="MaxFileSize" value="2MB"/>
+	         	<param name="MaxBackupIndex" value="3"/>
+				<layout class="org.apache.log4j.PatternLayout">
+					<param name="ConversionPattern" value="%d{ISO8601} [%-5p] %c{1} - %m%n" />
+				</layout>
+	</appender>
+	<root>
+		<priority value="DEBUG"/>
+		<appender-ref ref="rolling-file" />
+	</root>
+</log4j:configuration>

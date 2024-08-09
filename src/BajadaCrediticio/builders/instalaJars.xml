@@ -1,0 +1,50 @@
+<project name="InstalaJars-bajada" default="default" basedir=".">
+	<description>
+		Se encarga de instalar los jars que no estan en repositorios publicos
+		Cuando este disponible un repositorio corporativo no es mas necesarios este ant
+	</description>
+
+	<target name="default">	
+		<antcall target="ojdbc5"/>
+		<antcall target ="utils"/>
+	</target>
+
+	<!-- COMPILE -->
+	
+
+	
+	<target name="ojdbc5">
+		<antcall target="install">
+			<param name="groupid" 		value="com.oracle" />
+			<param name="artifactid" 	value="ojdbc5" />
+			<param name="versionid" 	value="1.0.0" />
+			<param name="file" 	value="./ojdbc5.jar" />
+		</antcall>
+	</target>	
+	
+		<target name="utils">
+		<antcall target="install">
+			<param name="groupid" 		value="ar.com.latam" />
+			<param name="artifactid" 	value="utils" />
+			<param name="versionid" 	value="1.0" />
+			<param name="file" 	value="./utils.jar" />
+		</antcall>
+	</target>	
+	
+	<target name="install">
+
+		<echo message="Instalando groupid=${groupid} artifactid=${artifactid} versionid=${versionid} file=&quot;${file}&quot;" />
+		<exec dir="./lib/" executable="cmd">
+			<arg value="/c" />
+			<arg value="mvn" />
+			<arg value="install:install-file" />
+			<arg value="-DgroupId=${groupid}" />
+			<arg value="-DartifactId=${artifactid}" />
+			<arg value="-Dversion=${versionid}" />
+			<arg value="-Dpackaging=jar" />
+			<arg value="-Dfile=&quot;${file}&quot;" />
+			<arg value="-DgeneratePom=true" />
+		</exec>
+	</target>	
+	
+</project>

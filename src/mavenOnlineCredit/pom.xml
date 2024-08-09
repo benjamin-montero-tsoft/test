@@ -1,0 +1,131 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+
+  <groupId>ar.com.latam</groupId>
+  <artifactId>mavenOnlineCredit</artifactId>
+  <version>1.0</version>
+  <packaging>pom</packaging>
+  <name>mavenOnlineCredit</name>
+
+  <modules>
+		
+		<module>../commons-utils-credit</module>
+		<module>../onlineCredit</module>		
+		<module>../onlineCreditCoreWeb</module>
+		<module>../onlineCreditEAR</module>			
+</modules>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+ 
+  <build>
+  <pluginManagement>
+			<plugins>
+			
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>1.5</source>
+						<target>1.5</target>
+					</configuration>
+				</plugin>
+				
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-eclipse-plugin</artifactId>
+					<version>2.9</version>
+					<configuration>
+						<wtpversion>1.5</wtpversion>
+						<wtpapplicationxml>true</wtpapplicationxml>
+						<wtpdefaultserver>WebSphere Application Server v7.0</wtpdefaultserver>
+						<jeeversion>5.0</jeeversion>
+						<additionalProjectnatures>
+							<projectnature>org.eclipse.jem.beaninfo.BeanInfoNature</projectnature>
+						</additionalProjectnatures>
+						<classpathContainers>
+							<classpathContainer>org.eclipse.jst.server.core.container/com.ibm.ws.ast.st.runtime.runtimeTarget.v70/was.base.v7</classpathContainer>
+							<classpathContainer>org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/WebSphere Application Server v7.0 JRE</classpathContainer>
+						</classpathContainers>
+					</configuration>
+				</plugin>
+				
+			</plugins>
+		</pluginManagement>
+  </build>
+  	<dependencies>
+  		 <dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.4</version>
+			<scope>provided</scope>
+		</dependency>	
+		<dependency>
+			<groupId>javaee</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>5</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+		   <dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.4.3</version>
+		</dependency>	
+	
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.4.3</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-api</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+	    
+		 <dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-servlet</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+		            
+	    <dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-template</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+	     
+	    <dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-jsp</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+	    
+	    <dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-core</artifactId>
+			<version>2.2.2</version>
+		</dependency>	
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.0.0.GA</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>4.0.2.GA</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.4</version>
+		</dependency>			
+	</dependencies> 
+</project>

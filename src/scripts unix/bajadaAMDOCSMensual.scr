@@ -1,0 +1,71 @@
+################################################################
+# bajadaAMDOCSMensual (Extractor de AMDOCS Mensual)            #
+# Autor: Karina Rojas                               		   #
+# Requerimiento:104379 - Interfaz Riesgo Crediticio para T3    #
+################################################################
+JAVA_HOME=/usr/java5
+PATH=.:/usr/java5/bin
+CLASSPATH=\
+/home/ctmprod/scp/applcred/bajadaAmdocsMensual:\
+/home/ctmprod/scp/applcred/bajadaAmdocsMensual/batch:\
+/home/ctmprod/scp/applcred/bajadaAmdocsMensual/lib/bajadaAMDOCSMensual.jar:\
+/home/ctmprod/scp/applcred/bajadaAmdocsMensual/lib/log4j-1.2.14.jar:\
+/home/ctmprod/scp/applcred/bajadaAmdocsMensual/lib/ojdbc5.jar:\
+/home/ctmprod/scp/applcred/bajadaAmdocsMensual/lib/utils.jar
+
+export JAVA_HOME PATH CLASSPATH
+
+. /u/ctmprod/scp/pce00/.AMBIENTE_11.2
+#############################################################################
+
+#PARAMETROS
+export ODATE=$1    #YYYYMMDD
+
+
+#RUTA DE LOS LOGS#
+export DIRLOG=/filerecept/RCFiles/logs
+
+#DEFINICION DE VARIABLE
+export fechaLog=`date +"%d_%m_%Y`
+export fechaActual=`date +"%d/%m/%Y %H:%M:%S`
+
+#NOMBRE DEL SCRITP
+export BATCH=bajadaAMDOCSMensual
+
+#Creacion de archivo de log
+export BATCHLOG=$DIRLOG/${BATCH}_$fechaLog.log
+>$BATCHLOG
+
+#Asigno permisos
+chmod 777 $BATCHLOG 
+#############################################################################
+
+##########################################
+#ejecucion del proceso java              #
+##########################################
+
+echo "Se inicia la ejecucion del proceso " $BATCH  "fecha = " $fechaActual   >> $BATCHLOG
+
+echo "Ejecutando java ar.com.tasa.credi.batch.AppReporteCrediticio" >> $BATCHLOG
+java ar.com.tasa.credi.batch.AppReporteCrediticio $ODATE
+
+#Se le da permisos al archivo log del script
+#Log
+echo "chmod 777" $BATCHLOG>> $BATCHLOG
+chmod 777 $BATCHLOG
+
+#Se vuelve en la ruta donde se encuentra el script
+echo "/home/ctmprod/scp/applcred/bajadaAmdocsMensual/batch">> $BATCHLOG
+cd /home/ctmprod/scp/applcred/bajadaAmdocsMensual/batch
+
+
+#############################################################################
+
+echo "************************************************** "   >> $BATCHLOG
+echo 'Salida de la ejecucion ' $RC                           >> $BATCHLOG
+echo "finalizo el proceso"                                   >> $BATCHLOG
+echo "************************************************** "   >> $BATCHLOG
+
+echo `date +"%d/%m/%Y %H:%M:%S"`                             >> $BATCHLOG
+
+exit $RC

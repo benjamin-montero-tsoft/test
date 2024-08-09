@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Filters -->
+	<bean name="securityContextPopulatorFilter" class="ar.com.latam.security.filters.SecurityContextPopulatorFilter">
+		<property name="authenticationService" ref="authenticationService" />
+		<!--		propiedad del role rolesMap definido en securityContextPopulatorFilter -->
+	</bean>	
+	<!-- Services -->
+	<!--applicationName: nombre del aplicacion a definir
+		targetObjectURI: url o urn del servicio web
+		method: metodo a invocar	-->
+	<bean name="authenticationService" class="ar.com.latam.security.services.impl.AuthenticationService" >
+		<property name="applicationName" value="OnlineRC" />
+		<property name="targetObjectURI" value="urn:UserProfileService" />
+		<property name="method" value="obtenerPerfilesUsuarioApp" />
+	</bean>
+	
+	<!-- Message Resources -->
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource" >
+	    <property name="basenames" value="messages"/>
+	</bean>	
+  
+</beans>

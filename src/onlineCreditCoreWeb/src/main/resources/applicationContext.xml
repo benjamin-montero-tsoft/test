@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	 http://www.springframework.org/schema/tx
+	 http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	 http://www.springframework.org/schema/context
+	 http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+
+	
+
+	<!-- Filters -->
+	<bean name="securityContextPopulatorFilter" class="ar.com.latam.security.filters.SecurityContextPopulatorFilter">
+		<property name="authenticationService" ref="authenticationService" />
+		<!--		propiedad del role rolesMap definido en securityContextPopulatorFilter -->
+	</bean>	
+	<!-- Services -->
+	<!--applicationName: nombre del aplicacion a definir
+		targetObjectURI: url o urn del servicio web
+		method: metodo a invocar	-->
+	<bean name="authenticationService" class="ar.com.latam.security.services.impl.AuthenticationService" >
+		<property name="applicationName" value="OnlineRC" />
+		<property name="targetObjectURI" value="urn:UserProfileService" />
+		<property name="method" value="obtenerPerfilesUsuarioApp" />
+	</bean>
+	
+  	<!-- Validators -->
+	<bean name="altaManualRiesgoCrediticioValidador" class="ar.com.latam.creditCore.validador.AltaManualRiesgoCrediticioValidador" >
+		<property name="riesgoCrediticioService" ref="riesgoCrediticioService"/>
+	</bean>
+	<bean name="busquedaRiesgoCrediticioValidador" class="ar.com.latam.creditCore.validador.BusquedaRiesgoCrediticioValidador" />
+	<bean name="busquedaRiesgoCrediticioHistValidador" class="ar.com.latam.creditCore.validador.BusquedaRiesgoCrediticioHistValidador" />
+	<bean name="modificacionRiesgoCrediticioValidador" class="ar.com.latam.creditCore.validador.ModificacionRiesgoCrediticioValidador" /> 	
+	
+	<!-- Message Resources -->
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource" >
+	    <property name="basenames" value="messages"/>
+	</bean>		
+
+	<!-- ORACLE Services -->
+	<bean name="tiposDocumentoService" class="ar.com.latam.creditCore.services.impl.TiposDocumentoService" >
+		<property name="tiposDocumentoDAO" ref="tiposDocumentoDAO"/>
+	</bean>
+	
+	<bean name="riesgoCrediticioService" class="ar.com.latam.creditCore.services.impl.RiesgoCrediticioService" >
+		<property name="riesgoCrediticioDAO" ref="riesgoCrediticioDAO"/>
+	</bean>	
+	
+	<bean name="riesgoCrediticioHistService" class="ar.com.latam.creditCore.services.impl.RiesgoCrediticioHistService" >
+		<property name="riesgoCrediticioHistDAO" ref="riesgoCrediticioHistDAO"/>
+	</bean>
+		
+	<bean name="novedadesService" class="ar.com.latam.creditCore.services.impl.NovedadesService" >
+		<property name="novedadesDAO" ref="novedadesDAO"/>
+	</bean>		
+	<!-- ORACLE DAO -->
+	
+	<!-- La propiedad jdbcTemplate de TiposDocumentoDAO, RiesgoCrediticioDAO y NovedadesDAO es de JdbcDaoSupport de la cual extienden-->
+	<bean name="tiposDocumentoDAO" class="ar.com.latam.creditCore.dao.impl.TiposDocumentoDAO" >
+		<property name="jdbcTemplate" ref="jdbcTemplateDBCPMAIL"/>
+	</bean>
+	
+	<bean name="riesgoCrediticioDAO" class="ar.com.latam.creditCore.dao.impl.RiesgoCrediticioDAO" >
+		<property name="jdbcTemplate" ref="jdbcTemplateDBCPMAIL"/>
+	</bean>
+
+	<bean name="riesgoCrediticioHistDAO" class="ar.com.latam.creditCore.dao.impl.RiesgoCrediticioHistDAO" >
+		<property name="jdbcTemplate" ref="jdbcTemplateDBCPMAIL"/>
+	</bean>
+	
+	<bean name="novedadesDAO" class="ar.com.latam.creditCore.dao.impl.NovedadesDAO" >
+		<property name="jdbcTemplate" ref="jdbcTemplateDBCPMAIL"/>
+	</bean>		
+	
+	<!-- Datasources -->
+	<bean id="jdbcTemplateDBCPMAIL" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSourceDBCPMAIL" />
+		
+	</bean>
+	
+	<bean id="dataSourceDBCPMAIL" class="org.springframework.jndi.JndiObjectFactoryBean" >
+		<property name="jndiName" value="DBCPMAIL"/>				
+	</bean>
+	
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+          <property name="dataSource" ref="dataSourceDBCPMAIL"/>
+    </bean>
+
+	
+	
+	<!-- EXPORT CSV -->
+	<bean id="exportCSV" class="ar.com.latam.creditCore.utils.ExportCSV"/>
+	
+</beans>

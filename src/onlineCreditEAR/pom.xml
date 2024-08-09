@@ -1,0 +1,116 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ar.com.latam</groupId>
+  <artifactId>onlineCreditEAR</artifactId>
+  <packaging>ear</packaging>
+  <version>1.0</version>
+  <name>onlineCreditEAR</name>
+  
+  <parent>
+		<groupId>ar.com.latam</groupId>
+		<artifactId>mavenOnlineCredit</artifactId>
+		<version>1.0</version>
+		<relativePath>../mavenOnlineCredit/pom.xml</relativePath>
+  </parent>
+  
+  <dependencies>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>onlineCredit</artifactId>
+			<version>1.0</version>
+			<type>war</type>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>onlineCreditCoreWeb</artifactId>
+			<version>1.0</version>
+			<type>war</type>
+			<scope>compile</scope>
+		</dependency>	
+		<!-- Dependencias de los wars -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>commons-utils-credit</artifactId>
+			<version>1.0</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		
+	    <dependency>
+	      <groupId>junit</groupId>
+	      <artifactId>junit</artifactId>
+	      <version>3.8.1</version>
+	      <scope>test</scope>
+	    </dependency>
+
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.8</version>
+				<configuration>
+					<version>5</version>
+        			<defaultJavaBundleDir>lib/</defaultJavaBundleDir>				
+					<modules>
+						<webModule>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>onlineCredit</artifactId>
+							<contextRoot>/OnlineCrediticio</contextRoot>
+						</webModule>
+						<webModule>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>onlineCreditCoreWeb</artifactId>
+							<contextRoot>/OnlineCrediticio/rc</contextRoot>
+						</webModule>											
+					</modules>
+					<archive>
+            		 <manifestEntries>
+		              <Implementation-Version>${project.version}</Implementation-Version>
+		            </manifestEntries>
+		          </archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<!-- 
+				Esto es un workaround para resolver el problema de que al ejecutar algo como: 
+					mvn eclipse:clean eclipse:eclipse clean install
+				primero Maven genera el directorio target/eclipseEar, que usa el RAD para deployar  
+				la aplicación desde el RAD, y luego Maven, por el comando 'clean', borra todo lo que 
+				hay en target. Con la siguiente configuración se excluye el directorio target/eclipseEar 
+				del borrado que se lleva a cabo en el directorio target
+				 -->
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<excludeDefaultDirectories>true</excludeDefaultDirectories>
+					<filesets>
+						<fileset>
+							<directory>${project.build.directory}</directory>
+							<excludes>
+								<exclude>eclipseEar</exclude>
+							</excludes>
+						</fileset>
+					</filesets>
+				</configuration>
+			</plugin>			
+		</plugins>
+		<!--  <resources> 
+      		<resource> 
+            	<directory>./</directory> 
+            		<targetPath>../onlineCreditEAR</targetPath> 
+            		<includes> 
+                		<include>deployment.xml</include> 
+            		</includes> 
+            </resource>
+        </resources>	-->	
+	
+		<finalName>onlineCreditEAR</finalName>		
+	</build>
+
+  
+</project>

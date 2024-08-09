@@ -1,0 +1,263 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ar.com.latam</groupId>
+  <artifactId>onlineCredit</artifactId>
+  <packaging>war</packaging>
+  <version>1.0</version>
+  <name>onlineCredit Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+   		 <springVersion>3.0.6.RELEASE</springVersion>
+  </properties>
+  
+  
+	<parent>
+		<groupId>ar.com.latam</groupId>
+		<artifactId>mavenOnlineCredit</artifactId>
+		<version>1.0</version>
+		<relativePath>../mavenOnlineCredit/pom.xml</relativePath>
+	</parent>
+	
+  <dependencies>
+    <dependency>
+      <groupId>ar.com.latam</groupId>
+      <artifactId>commons-utils-credit</artifactId>
+      <version>1.0</version>
+    </dependency>
+    
+    <dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.4</version>
+			<scope>provided</scope>
+	</dependency> 
+	          
+    <dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.0</version>
+			<scope>provided</scope>
+	</dependency> 
+      
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context</artifactId>
+		<version>${springVersion}</version>
+	</dependency>
+    
+    <dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-web</artifactId>
+		<version>${springVersion}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework.security</groupId>
+		<artifactId>spring-security-core</artifactId>
+		<version>${springVersion}</version>
+	</dependency>	
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${springVersion}</version>
+	</dependency>	
+	<dependency>
+		<groupId>org.springframework.security</groupId>
+		<artifactId>spring-security-web</artifactId>
+		<version>${springVersion}</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-jdbc</artifactId>
+		<version>${springVersion}</version>
+	</dependency>
+	
+  
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context-support</artifactId>
+		<version>${springVersion}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework.webflow</groupId>
+		<artifactId>spring-js</artifactId>
+		<version>2.3.0.RELEASE</version>
+	</dependency>		
+	<dependency>
+		<groupId>org.springframework.webflow</groupId>
+		<artifactId>spring-js</artifactId>
+		<version>2.3.0.RELEASE</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>org.springframework.webflow</groupId>
+		<artifactId>spring-js-resources</artifactId>
+		<version>2.3.0.RELEASE</version>
+	</dependency>
+	
+            
+	
+	<dependency>
+		<groupId>org.apache.tiles</groupId>
+		<artifactId>tiles-api</artifactId>
+		<version>2.2.2</version>
+	</dependency>
+    
+	 <dependency>
+		<groupId>org.apache.tiles</groupId>
+		<artifactId>tiles-servlet</artifactId>
+		<version>2.2.2</version>
+	</dependency>
+	            
+	    <dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-template</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+	     
+	    <dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-jsp</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+	    
+	    <dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-core</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>${springVersion}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>1.1.0</version>
+		</dependency>
+	
+	 
+		
+	 </dependencies>	
+  <build>
+    <finalName>onlineCredit</finalName>
+	<resources>
+		<resource>
+			<directory>src/main/resources</directory>
+		</resource>
+	</resources>    
+     <plugins>
+     	
+       	<plugin>
+		      	<groupId>org.apache.maven.plugins</groupId>
+		      	<artifactId>maven-eclipse-plugin</artifactId>
+		      	<version>2.9</version>
+		      	<configuration>
+					<additionalProjectnatures>
+						<projectnature>org.eclipse.wst.jsdt.core.jsNature</projectnature>
+					</additionalProjectnatures>
+					<additionalProjectFacets>
+						<com.ibm.websphere.extended.web>7.0</com.ibm.websphere.extended.web>
+						<com.ibm.websphere.coexistence.web>7.0</com.ibm.websphere.coexistence.web>
+					</additionalProjectFacets>
+					<archive>
+						<manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>
+						  <manifest>
+		            		<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+		              		<addClasspath>true</addClasspath>
+		              		<classpathPrefix>lib/</classpathPrefix>
+		               	</manifest>
+					</archive>
+					
+					</configuration>
+		      </plugin>
+		    <plugin>
+	        <artifactId>maven-war-plugin</artifactId>
+	        <version>2.2</version>
+	        <configuration>
+	          <packagingExcludes>
+		          					WEB-INF/lib/a*.jar,
+		          					WEB-INF/lib/b*.jar,
+		          					WEB-INF/lib/cg*.jar,
+		          					WEB-INF/lib/commons*.jar,          					
+		          					WEB-INF/lib/cor*.jar,			          					
+		          					WEB-INF/lib/d*.jar,
+		          					WEB-INF/lib/e*.jar,
+		          					WEB-INF/lib/g*.jar,
+		          					WEB-INF/lib/h*.jar,
+		          					WEB-INF/lib/i*.jar,
+		          					WEB-INF/lib/ja*.jar,
+		          					WEB-INF/lib/jc*.jar,
+		          					WEB-INF/lib/jc*.jar,
+		          					WEB-INF/lib/jmesa*.jar,
+		          					WEB-INF/lib/jo*.jar,
+		          					WEB-INF/lib/js-1.7R2.jar,
+		          					WEB-INF/lib/jt*.jar,
+		          					WEB-INF/lib/jx*.jar,
+		          					WEB-INF/lib/l*.jar,
+		          					WEB-INF/lib/mail*.jar,
+		          					WEB-INF/lib/o*.jar,
+		          					WEB-INF/lib/p*.jar,
+		          					WEB-INF/lib/sl*.jar,
+		          					WEB-INF/lib/so*.jar,
+		          					WEB-INF/lib/spring-a*.jar,
+		          					WEB-INF/lib/spring-b*.jar,
+		          					WEB-INF/lib/spring-c*.jar,
+		          					WEB-INF/lib/spring-e*.jar,
+		          					WEB-INF/lib/spring-j*.jar,
+		          					WEB-INF/lib/spring-o*.jar,
+		          					WEB-INF/lib/spring-security-a*.jar,
+		          					WEB-INF/lib/spring-security-c*.jar,
+		          					WEB-INF/lib/spring-security-w*.jar,
+		          					WEB-INF/lib/spring-t*.jar,
+		          					WEB-INF/lib/spring-web-3.0.6.RELEASE.jar,
+		          					WEB-INF/lib/st*.jar,
+		          					WEB-INF/lib/tagsoup-1.1.3.jar,
+		          					WEB-INF/lib/tiles-api-2.2.2.jar,
+		          					WEB-INF/lib/tiles-core-2.2.2.jar,
+		          					WEB-INF/lib/tiles-servlet-2.2.2.jar,
+		          					WEB-INF/lib/tiles-template-2.2.2.jar,
+		          					WEB-INF/lib/v*.jar,
+		          					WEB-INF/lib/x*.jar
+	          </packagingExcludes>	          
+	          <!--<packagingIncludes>-->
+	          					<!-- packagingIncludes es case sensitive. Lo siguiente hace lo mismo que lo anterior, pero como es case sensitive es mejor usar packagingExcludes -->
+	          					<!--
+	          					**/*.css,
+	          					**/*.CSS,
+	          					**/*.gif,
+	          					**/*.GIF,
+	          					**/*.jpg,
+	          					**/*.JPG,
+	         					**/*.png,
+	         					**/*.PNG,
+	         					**/*.js,
+	         					**/*.JS,
+	         					**/*.jsp,
+	         					**/*.JSP,
+	          					**/*.xml,
+	          					**/*.XML,
+	          					**/*.properties,
+	          					**/*.PROPERTIES,
+	          					**/*.class,
+	          					**/*.CLASS,
+	          					WEB-INF/lib/spring-security-taglibs-3.0.6.RELEASE.jar,
+	          					WEB-INF/lib/spring-webmvc-3.0.6.RELEASE.jar,
+	          					WEB-INF/lib/tiles-jsp-2.2.2.jar	          					
+	          </packagingIncludes>-->
+	          <archive>
+	            <manifest>
+	              <addClasspath>true</addClasspath>
+	              <classpathPrefix>lib/</classpathPrefix>
+	            </manifest>
+	          </archive>
+	        </configuration>
+	    </plugin> 
+	      
+    </plugins>    
+  </build>
+</project>
