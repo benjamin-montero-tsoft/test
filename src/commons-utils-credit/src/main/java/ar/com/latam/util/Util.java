@@ -147,7 +147,7 @@ public class Util {
 	}
 	
     /**
-     * Al "String original" se le argrega caracter  según "pos" hasta
+     * Al "String original" se le argrega caracter  segï¿½n "pos" hasta
      * el que el nuevo String  tenga la "cantDigitos" especificado
      *
      * @param aValor String original

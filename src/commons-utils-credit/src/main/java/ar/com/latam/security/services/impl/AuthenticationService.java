@@ -3,7 +3,7 @@ package ar.com.latam.security.services.impl;
 /**
  * Implement access to a web service throw an RPC Call.
  * <P>
- * @author HJSolá - Oracle IDevelopment
+ * @author HJSolï¿½ - Oracle IDevelopment
  */
 
 import java.net.MalformedURLException;

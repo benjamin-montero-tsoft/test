@@ -51,8 +51,8 @@ public class SFTPCliente {
 		}
 		catch (JSchException e) {
 			e.printStackTrace();
-			log.error("Error en la conexión a destino: "+host);
-			throw new CustomSftpException("Error en la conexión a destino: "+host);
+			log.error("Error en la conexiï¿½n a destino: "+host);
+			throw new CustomSftpException("Error en la conexiï¿½n a destino: "+host);
 
 		}
 
@@ -64,8 +64,8 @@ public class SFTPCliente {
 			session.disconnect();
 		} catch (Exception e) {
 			e.printStackTrace();
-			log.error("Error en la conexión a destino: "+host);
-			throw new CustomSftpException("Error en la desconexión de destino: "+host);
+			log.error("Error en la conexiï¿½n a destino: "+host);
+			throw new CustomSftpException("Error en la desconexiï¿½n de destino: "+host);
 
 		}
 	}
@@ -84,7 +84,7 @@ public class SFTPCliente {
 			
 		} catch (Exception e)  {
 			e.printStackTrace();
-			log.error("Error en la conexión a destino: "+host);
+			log.error("Error en la conexiï¿½n a destino: "+host);
 			throw new CustomSftpException("Error en la tranferencia de datos a destino: "+host);
 
 		}

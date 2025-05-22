@@ -131,7 +131,7 @@ public class RiesgoCrediticioService implements IRiesgoCrediticioService {
 			listaClientesRiesgoCrediticioCSV.add(clienteRiesgoCrediticio);
 			
 			/**
-			 * Una Persona Fisica tiene DNI, CUIL y CUIT (el cuil y cuit son el mismo número)
+			 * Una Persona Fisica tiene DNI, CUIL y CUIT (el cuil y cuit son el mismo nï¿½mero)
 			 * 
 			 * Una empresa Juridica (empresa) no tiene DNI ni CUIL, solo tiene CUIT
 			 */

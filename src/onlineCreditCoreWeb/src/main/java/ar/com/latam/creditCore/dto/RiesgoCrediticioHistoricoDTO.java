@@ -58,7 +58,7 @@ public class RiesgoCrediticioHistoricoDTO implements Serializable{
 	/* CAMPO User_Update_M_Cd (Usuario de carga)*/
 	private String usuarioCargaCambio;
 	
-	/* CAMPO Last_Updated_F_Dt (Fecha de último update)*/
+	/* CAMPO Last_Updated_F_Dt (Fecha de ï¿½ltimo update)*/
 	private String fechaUltimoUpdate;
 	
 	/* CAMPO Last_Updated_Dt (Fecha de la base)*/

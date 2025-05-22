@@ -10,9 +10,6 @@ import org.apache.log4j.Logger;
 
 import ar.com.latam.security.services.interfaz.IAuthenticationService;
 
-import com.ibm.websphere.servlet.session.IBMApplicationSession;
-import com.ibm.websphere.servlet.session.IBMSession;
-
 /**
  * 
  * @author diana.karina.rojas
@@ -61,15 +58,15 @@ public class SecurityContextPopulatorFilter extends AbstractSecurityContextPopul
 			}
 			if(privileges!=null){
 				log.debug("privilegios:" + privileges);
-				IBMApplicationSession ibmAppSession=((IBMSession)req.getSession()).getIBMApplicationSession();
-				ibmAppSession.setAttribute(PRIVILEGES_TOKEN, privileges);
+				// Guardar privilegios en la sesión estándar de Java EE
+				req.getSession().setAttribute(PRIVILEGES_TOKEN, privileges);
 			} else {
 				log.debug("sin privilegios");
 			}
 		}else{
 			log.debug("user is null");
-			IBMApplicationSession ibmAppSession=((IBMSession)req.getSession()).getIBMApplicationSession();
-			privileges=(List<String>) ibmAppSession.getAttribute(PRIVILEGES_TOKEN);
+			// Recuperar privilegios de la sesión estándar de Java EE
+			privileges=(List<String>) req.getSession().getAttribute(PRIVILEGES_TOKEN);
 		}
 		return privileges;
 	}

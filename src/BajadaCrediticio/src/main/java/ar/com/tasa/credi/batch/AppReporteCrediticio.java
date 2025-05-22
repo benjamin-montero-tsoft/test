@@ -53,7 +53,7 @@ public class AppReporteCrediticio
     	  System.exit(1);
       }
     
-      log.info("Odate ejecución: " + odate);
+      log.info("Odate ejecuciï¿½n: " + odate);
       
       
       try

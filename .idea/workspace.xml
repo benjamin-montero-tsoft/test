@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f3304f98-8944-4726-a363-600869ebd7f4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/BajadaCrediticio/conf/OnlineRCredi.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/BajadaCrediticio/conf/OnlineRCredi.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BajadaCrediticio/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/BajadaCrediticio/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BajadaCrediticio/src/main/java/ar/com/tasa/credi/batch/AppReporteCrediticio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BajadaCrediticio/src/main/java/ar/com/tasa/credi/batch/AppReporteCrediticio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commons-utils-credit/src/main/java/ar/com/latam/security/filters/SecurityContextPopulatorFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commons-utils-credit/src/main/java/ar/com/latam/security/filters/SecurityContextPopulatorFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commons-utils-credit/src/main/java/ar/com/latam/security/services/impl/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commons-utils-credit/src/main/java/ar/com/latam/security/services/impl/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commons-utils-credit/src/main/java/ar/com/latam/util/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commons-utils-credit/src/main/java/ar/com/latam/util/Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mavenOnlineCredit/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/mavenOnlineCredit/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onlineCredit/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/onlineCredit/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onlineCreditCoreWeb/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/onlineCreditCoreWeb/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onlineCreditCoreWeb/src/main/java/ar/com/latam/creditCore/dto/RiesgoCrediticioHistoricoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/onlineCreditCoreWeb/src/main/java/ar/com/latam/creditCore/dto/RiesgoCrediticioHistoricoDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onlineCreditCoreWeb/src/main/java/ar/com/latam/creditCore/services/impl/RiesgoCrediticioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/onlineCreditCoreWeb/src/main/java/ar/com/latam/creditCore/services/impl/RiesgoCrediticioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onlineCreditCoreWeb/src/main/java/ar/com/latam/creditCore/utils/SFTPCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/onlineCreditCoreWeb/src/main/java/ar/com/latam/creditCore/utils/SFTPCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/onlineCreditEAR/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/onlineCreditEAR/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2w5UyjfS5SbEjKGPAxVq2xpked2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/desarrollo/telefonica/MAULIV/mauliv-sharepoint/mauliv-web-telefonica",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f3304f98-8944-4726-a363-600869ebd7f4" name="Changes" comment="" />
+      <created>1745331186251</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1745331186251</updated>
+    </task>
+    <servers />
+  </component>
+</project>

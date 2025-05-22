@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/BajadaCrediticio/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/BajadaCrediticio/src/main/java/ar/com/tasa/credi/batch/AppReporteCrediticio.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/BajadaCrediticio/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/commons-utils-credit/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/commons-utils-credit/src/main/java/ar/com/latam/security/services/impl/AuthenticationService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/commons-utils-credit/src/main/java/ar/com/latam/util/Util.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/commons-utils-credit/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/mavenOnlineCredit/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/mavenOnlineCredit/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/onlineCredit/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/onlineCredit/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/onlineCreditCoreWeb/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/onlineCreditCoreWeb/src/main/java/ar/com/latam/creditCore/dto/RiesgoCrediticioHistoricoDTO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/onlineCreditCoreWeb/src/main/java/ar/com/latam/creditCore/services/impl/RiesgoCrediticioService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/onlineCreditCoreWeb/src/main/java/ar/com/latam/creditCore/utils/SFTPCliente.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/onlineCreditCoreWeb/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/onlineCreditEAR/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/onlineCreditEAR/src/main/resources" charset="UTF-8" />
+  </component>
+</project>
